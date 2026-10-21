@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-surface-900: #0f172a;
+    --color-surface-800: #1e293b;
+    --color-surface-700: #334155;
+  }
+
+  body {
+    background-color: #090d16;
+    color: #f1f5f9;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+}
+
+@layer components {
+  /* Glassmorphism surfaces */
+  .glass-card {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-hover {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card-hover:hover {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-panel {
+    background: rgba(11, 17, 33, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-input {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #f8fafc;
+    transition: all 0.15s ease;
+  }
+  .glass-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    background: rgba(15, 23, 42, 0.85);
+  }
+
+  /* Badge utilities */
+  .badge-ktas-1 {
+    background: rgba(220, 38, 38, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(220, 38, 38, 0.4);
+  }
+  .badge-ktas-2 {
+    background: rgba(234, 88, 12, 0.15);
+    color: #fdba74;
+    border: 1px solid rgba(234, 88, 12, 0.4);
+  }
+  .badge-ktas-3 {
+    background: rgba(234, 179, 8, 0.15);
+    color: #fef08a;
+    border: 1px solid rgba(234, 179, 8, 0.4);
+  }
+  .badge-ktas-4 {
+    background: rgba(22, 163, 74, 0.15);
+    color: #86efac;
+    border: 1px solid rgba(22, 163, 74, 0.4);
+  }
+  .badge-ktas-5 {
+    background: rgba(37, 99, 235, 0.15);
+    color: #93c5fd;
+    border: 1px solid rgba(37, 99, 235, 0.4);
+  }
+
+  /* Pulse animation */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .emergency-glow {
+    box-shadow: 0 0 25px -5px rgba(239, 68, 68, 0.5);
+  }
+}
+
+/* Leaflet map custom dark styling */
+.leaflet-container {
+  font-family: inherit;
+  background-color: #0a0f1d !important;
+  z-index: 10 !important;
+}
+
+.leaflet-tile {
+  filter: brightness(0.7) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(15, 23, 42, 0.95) !important;
+  color: #f8fafc !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7) !important;
+}
+
+.leaflet-popup-tip {
+  background: #0f172a !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Custom Marker CSS */
+.custom-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+  border: 2px solid white;
+}
